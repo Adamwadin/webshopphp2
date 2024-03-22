@@ -64,13 +64,13 @@ require_once("Models/Product.php");
         <div class="container px-4 px-lg-5 mt-5">
             <table class="table">
                 <thead>
-                    <th>
+                    <tr>
                         <td>Name</td>
                         <td>Category</td>
                         <td>Price</td>
                         <td>Stock level</td>
                         <td></td>
-                    </th>
+                    </tr>
                 </thead>
 
                 <tbody>
