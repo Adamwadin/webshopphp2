@@ -1,7 +1,9 @@
 <?php
 // include --  OK även om filen inte finns
 //include_once("Models/Products.php");
-require_once("Models/Product.php");
+require_once("Models/Database.php");
+
+$dbContext = new DBContext();
 ?>
 
 <!DOCTYPE html>
@@ -94,8 +96,7 @@ require_once("Models/Product.php");
                 <tbody>
                     <!-- Loopa alla produkter och SKAPA tr taggar -->
                     <?php
-                    $produkterna = getAllProducts();
-                    foreach ($produkterna as $product) {
+                    foreach ($dbContext->getAllProducts() as $product) {
                         if($product->price > 20){
                             echo  "<tr><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td><a href='product.php?id=$product->id'>EDIT</a></td></tr>";
                         }else{

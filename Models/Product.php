@@ -102,7 +102,8 @@ $allaProdukter = [
 
 function getAllCategories(){
     $cats = [];
-    foreach(getAllProducts() as $product){
+    global $allaProdukter;
+    foreach($allaProdukter as $product){
         if(!in_array($product->categoryName,$cats)){
             $cats[] = $product->categoryName;
         }
@@ -111,8 +112,8 @@ function getAllCategories(){
 }
 
 
-function getAllProducts(){
-    global $allaProdukter;
-    return $allaProdukter;
-}
+// function getAllProducts() {
+//     global $allaProdukter;
+//     return $allaProdukter;
+// }
 ?>
