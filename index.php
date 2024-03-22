@@ -65,11 +65,11 @@ require_once("Models/Product.php");
             <table class="table">
                 <thead>
                     <tr>
-                        <td>Name</td>
-                        <td>Category</td>
-                        <td>Price</td>
-                        <td>Stock level</td>
-                        <td></td>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock level</th>
+                        <th></th>
                     </tr>
                 </thead>
 
