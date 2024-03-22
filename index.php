@@ -32,14 +32,9 @@ include_once("Models/Product.php")
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#!">All Products</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <!-- <?php
-                                foreach(getAllCategories() as $category) {
-                                ?>
-                                    <li><a class="dropdown-item" href="#!"><?php echo $category;  ?></a></li>
-                                <?php
-                                }
-                                ?>
-                                 -->
+                                <li><a class="dropdown-item" href="#!">Datorer</a></li>
+                                <li><a class="dropdown-item" href="#!">Skrivare</a></li>
+
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Login</a></li>
