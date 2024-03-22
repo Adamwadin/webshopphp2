@@ -1,7 +1,7 @@
 <?php
-include_once("Models/Product.php")
-
-
+// include --  OK även om filen inte finns
+//include_once("Models/Products.php");
+require_once("Models/Product.php");
 ?>
 
 <!DOCTYPE html>
@@ -74,9 +74,13 @@ include_once("Models/Product.php")
                 </thead>
 
                 <tbody>
-                    <tr>
-
-                    </tr>
+                    <!-- Loopa alla produkter och SKAPA tr taggar -->
+                    <?php
+                    $produkterna = getAllProducts();
+                    foreach ($produkterna as $product) {
+                            echo  "<tr><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td></td></tr>";
+                    }
+                    ?>
                 </tbody>
             </table>
                             </div>
