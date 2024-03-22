@@ -78,7 +78,11 @@ require_once("Models/Product.php");
                     <?php
                     $produkterna = getAllProducts();
                     foreach ($produkterna as $product) {
+                        if($product->price > 20){
                             echo  "<tr><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td></td></tr>";
+                        }else{
+                            echo  "<tr class='table-info'><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td></td></tr>";                            
+                        }
                     }
                     ?>
                 </tbody>
