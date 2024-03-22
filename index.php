@@ -97,9 +97,9 @@ require_once("Models/Product.php");
                     $produkterna = getAllProducts();
                     foreach ($produkterna as $product) {
                         if($product->price > 20){
-                            echo  "<tr><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td></td></tr>";
+                            echo  "<tr><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td><a href='product.php?id=$product->id'>EDIT</a></td></tr>";
                         }else{
-                            echo  "<tr class='table-info'><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td></td></tr>";                            
+                            echo  "<tr class='table-info'><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td><a href='product.php?id=$product->id'>EDIT</a></td></tr>";                            
                         }
                     }
                     ?>
