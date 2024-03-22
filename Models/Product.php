@@ -96,6 +96,7 @@ $allaProdukter = [
     new Product(75,'Rhönbräu Klosterbier',9,125,'Beverages'),
     new Product(76,'Lakkalikööri',9,57,'Beverages'),
     new Product(77,'Original Frankfurter grüne Soße',13,32,'Condiments'),
+    new Product(78,'Tidningen Buster',13,32,'Tidningar'),
 ];
 
 

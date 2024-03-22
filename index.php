@@ -32,8 +32,11 @@ require_once("Models/Product.php");
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#!">All Products</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Datorer</a></li>
-                                <li><a class="dropdown-item" href="#!">Skrivare</a></li>
+                                <?php
+                                foreach(getAllCategories() as $category){
+                                    echo "<li><a class='dropdown-item' href='#!'>$category</a></li> ";   
+                                }
+                                ?>
 
                             </ul>
                         </li>
@@ -54,7 +57,14 @@ require_once("Models/Product.php");
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
+                    <?php
+                    $hour = date('h');
+                    if($hour >= 9){
+                    ?>
                     <h1 class="display-4 fw-bolder">Super shoppen</h1>
+                    <?php
+                    }
+                    ?> 
                     <p class="lead fw-normal text-white-50 mb-0">Handla massa onödigt hos oss!</p>
                 </div>
             </div>
@@ -62,6 +72,14 @@ require_once("Models/Product.php");
         <!-- Section-->
         <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
+            <select>
+            <?php
+                                foreach(getAllCategories() as $category){
+                                    echo "<option>$category</option> ";   
+                                }
+                                ?>
+
+            </select>
             <table class="table">
                 <thead>
                     <tr>
