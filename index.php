@@ -35,8 +35,8 @@ $dbContext = new DBContext();
                                 <li><a class="dropdown-item" href="#!">All Products</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <?php
-                                foreach(getAllCategories() as $category){
-                                    echo "<li><a class='dropdown-item' href='#!'>$category</a></li> ";   
+                                foreach($dbContext->getAllCategories() as $category){
+                                    echo "<li><a class='dropdown-item' href='#!'>$category->title</a></li> ";   
                                 }
                                 ?>
 
@@ -76,8 +76,8 @@ $dbContext = new DBContext();
         <div class="container px-4 px-lg-5 mt-5">
             <select>
             <?php
-                                foreach(getAllCategories() as $category){
-                                    echo "<option>$category</option> ";   
+                                foreach($dbContext->getAllCategories() as $category){
+                                    echo "<option>$category->title</option> ";   
                                 }
                                 ?>
 
@@ -98,9 +98,9 @@ $dbContext = new DBContext();
                     <?php
                     foreach ($dbContext->getAllProducts() as $product) {
                         if($product->price > 20){
-                            echo  "<tr><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td><a href='product.php?id=$product->id'>EDIT</a></td></tr>";
+                            echo  "<tr><td>$product->title</td><td>$product->categoryId</td><td>$product->price</td><td>$product->stockLevel</td><td><a href='product.php?id=$product->id'>EDIT</a></td></tr>";
                         }else{
-                            echo  "<tr class='table-info'><td>$product->title</td><td>$product->categoryName</td><td>$product->price</td><td>$product->stockLevel</td><td><a href='product.php?id=$product->id'>EDIT</a></td></tr>";                            
+                            echo  "<tr class='table-info'><td>$product->title</td><td>$product->categoryId</td><td>$product->price</td><td>$product->stockLevel</td><td><a href='product.php?id=$product->id'>EDIT</a></td></tr>";                            
                         }
                     }
                     ?>
