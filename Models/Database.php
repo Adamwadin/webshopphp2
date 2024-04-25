@@ -27,6 +27,7 @@ class DBContext
         $this->userDatabase = new UserDatabase($this->pdo);
         $this->initIfNotInitialized();
         $this->seedfNotSeeded();
+        $this->addFavoriteColumnToProducts();
 
 
 
@@ -331,6 +332,17 @@ class DBContext
     }
 
 
+    function addFavoriteColumnToProducts()
+    {
+        $prep = $this->pdo->prepare('ALTER TABLE products ADD favorite INT DEFAULT 0');
+
+
+        $prep = $this->pdo->prepare('UPDATE products SET favorite = (CASE WHEN id <= 10 THEN id ELSE 0 END)');
+
+        $prep->execute();
+    }
+
+
 
 
     function addCategory($title)
@@ -424,9 +436,6 @@ class DBContext
 
 
         $this->pdo->exec($sql);
-
-
-
 
 
 
